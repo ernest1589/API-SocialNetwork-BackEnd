@@ -3,7 +3,7 @@ const {
   getThoughts,
   getSingleThought,
   createThought,
-  updateThough,
+  updateThought,
   deleteThought,
   createReaction,
   deleteReaction,
@@ -15,7 +15,7 @@ router.route("/").get(getThoughts).post(createThought);
 router
   .route("/:Thoughtid")
   .get(getSingleThought)
-  .put(updateThough)
+  .put(updateThought)
   .delete(deleteThought);
 
 router.route("/:ThoughtId/reaction").post(createReaction);
