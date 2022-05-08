@@ -1,4 +1,4 @@
-const { application } = require("express");
+const { User } = require("express");
 const { User, Thought } = require("../models/index");
 
 module.exports = {
@@ -26,7 +26,7 @@ module.exports = {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
         !user
-          ? res.status(404).json({ message: "Nouser with that Id" })
+          ? res.status(404).json({ message: "No user with that Id" })
           : Application.deleteMany({ _id: { $in: user.applications } })
       )
       .then(() => res.json({ message: "User and associated apps deleted " }))
