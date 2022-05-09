@@ -1,5 +1,4 @@
-const { User } = require("express");
-const { User, Thought } = require("../models/index");
+const { User } = require("../models/index");
 
 module.exports = {
   getUsers(req, res) {

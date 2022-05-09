@@ -1,6 +1,5 @@
 const { application } = require("express");
 const { Thought, User } = require("../models/index");
-const { createIndexes } = require("../models/User");
 
 module.exports = {
   getThoughts(req, res) {
@@ -55,7 +54,7 @@ module.exports = {
         res.status(500).json(err);
       });
   },
-  deleteThought(req, res) {
+  removeThought(req, res) {
     Thought.findOneAndRemove({ _id: req.params.thoughtId })
       .then((thought) =>
         !thought
